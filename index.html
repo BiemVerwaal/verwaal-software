@@ -81,6 +81,30 @@
             color: #000;
         }
 
+        .mobile-contact-btn {
+            display: none;
+            align-items: center;
+            justify-content: center;
+            width: 44px;
+            height: 44px;
+            background: linear-gradient(135deg, #2563EB 0%, #0EA5E9 100%);
+            border-radius: 50%;
+            color: white;
+            text-decoration: none;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
+        }
+
+        .mobile-contact-btn:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 16px rgba(37, 99, 235, 0.4);
+        }
+
+        .mobile-contact-btn svg {
+            width: 22px;
+            height: 22px;
+        }
+
         /* Hero Section */
         .hero {
             margin-top: 60px;
@@ -422,7 +446,7 @@
         @media (max-width: 768px) {
             header .container {
                 flex-direction: row;
-                justify-content: center;
+                justify-content: space-between;
                 gap: 0;
                 height: 55px;
             }
@@ -431,6 +455,10 @@
                 height: 50px;
                 min-width: 200px;
                 max-width: 240px;
+            }
+
+            .mobile-contact-btn {
+                display: flex;
             }
 
             nav {
@@ -525,6 +553,12 @@
                 <a href="#expertise">Expertise</a>
                 <a href="#contact">Contact</a>
             </nav>
+            <a href="https://wa.me/31643127391?text=Hallo,%20ik%20ben%20geïnteresseerd%20in%20uw%20services%20van%20Verwaal%20Software" target="_blank" class="mobile-contact-btn">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M3 8a5 5 0 0 1 5-5h2a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H8a5 5 0 0 1-5-5V8Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M14 8h4m0 4h-4m0 4h4" stroke="white" stroke-width="2" stroke-linecap="round"/>
+                </svg>
+            </a>
         </div>
     </header>
 
