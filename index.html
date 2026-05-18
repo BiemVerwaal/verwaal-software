@@ -38,7 +38,7 @@
             width: 100%;
             background: rgba(255, 255, 255, 0.95);
             backdrop-filter: blur(10px);
-            padding: 16px 24px;
+            padding: 12px 24px;
             z-index: 1000;
             border-bottom: 1px solid rgba(0, 0, 0, 0.05);
         }
@@ -47,6 +47,7 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
+            height: 50px;
         }
 
         .logo {
@@ -56,11 +57,13 @@
             color: #000;
             display: flex;
             align-items: center;
+            height: 50px;
         }
 
         .logo svg {
-            width: 220px;
-            height: 60px;
+            height: 50px;
+            width: auto;
+            min-width: 200px;
         }
 
         nav a {
@@ -423,8 +426,8 @@
             }
 
             .logo svg {
-                width: 160px;
-                height: 45px;
+                height: 38px;
+                min-width: 140px;
             }
 
             nav {
@@ -490,26 +493,28 @@
     <!-- Header -->
     <header>
         <div class="container">
-            <svg width="220" height="60" viewBox="0 0 820 220" fill="none" xmlns="http://www.w3.org/2000/svg" style="flex-shrink: 0;">
-                <defs>
-                    <linearGradient id="blueGradient" x1="0" y1="0" x2="1" y2="1">
-                        <stop offset="0%" stop-color="#2563EB"/>
-                        <stop offset="100%" stop-color="#06B6D4"/>
-                    </linearGradient>
-                </defs>
-                <g transform="translate(40,40)">
-                    <path d="M70 0L140 40V120L70 160L0 120V40L70 0Z" fill="url(#blueGradient)"/>
-                    <path d="M38 52L70 112L102 52" stroke="white" stroke-width="14" stroke-linecap="round" stroke-linejoin="round"/>
-                    <circle cx="70" cy="30" r="6" fill="white"/>
-                    <circle cx="28" cy="110" r="6" fill="white"/>
-                    <circle cx="112" cy="110" r="6" fill="white"/>
-                    <line x1="70" y1="36" x2="70" y2="56" stroke="white" stroke-width="4" stroke-linecap="round"/>
-                    <line x1="34" y1="106" x2="50" y2="90" stroke="white" stroke-width="4" stroke-linecap="round"/>
-                    <line x1="106" y1="106" x2="90" y2="90" stroke="white" stroke-width="4" stroke-linecap="round"/>
-                </g>
-                <text x="250" y="105" font-family="Inter, Arial, sans-serif" font-size="48" font-weight="700" fill="#0F172A">Verwaal</text>
-                <text x="252" y="150" font-family="Inter, Arial, sans-serif" font-size="34" font-weight="400" fill="#334155" letter-spacing="2">SOFTWARE</text>
-            </svg>
+            <div class="logo">
+                <svg viewBox="0 0 820 220" preserveAspectRatio="xMidYMid meet" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <defs>
+                        <linearGradient id="blueGradient" x1="0" y1="0" x2="1" y2="1">
+                            <stop offset="0%" stop-color="#2563EB"/>
+                            <stop offset="100%" stop-color="#06B6D4"/>
+                        </linearGradient>
+                    </defs>
+                    <g transform="translate(40,40)">
+                        <path d="M70 0L140 40V120L70 160L0 120V40L70 0Z" fill="url(#blueGradient)"/>
+                        <path d="M38 52L70 112L102 52" stroke="white" stroke-width="14" stroke-linecap="round" stroke-linejoin="round"/>
+                        <circle cx="70" cy="30" r="6" fill="white"/>
+                        <circle cx="28" cy="110" r="6" fill="white"/>
+                        <circle cx="112" cy="110" r="6" fill="white"/>
+                        <line x1="70" y1="36" x2="70" y2="56" stroke="white" stroke-width="4" stroke-linecap="round"/>
+                        <line x1="34" y1="106" x2="50" y2="90" stroke="white" stroke-width="4" stroke-linecap="round"/>
+                        <line x1="106" y1="106" x2="90" y2="90" stroke="white" stroke-width="4" stroke-linecap="round"/>
+                    </g>
+                    <text x="250" y="105" font-family="Inter, Arial, sans-serif" font-size="48" font-weight="700" fill="#0F172A">Verwaal</text>
+                    <text x="252" y="150" font-family="Inter, Arial, sans-serif" font-size="34" font-weight="400" fill="#334155" letter-spacing="2">SOFTWARE</text>
+                </svg>
+            </div>
             <nav>
                 <a href="#services">Wat wij doen</a>
                 <a href="#expertise">Expertise</a>
