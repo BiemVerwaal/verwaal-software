@@ -431,6 +431,32 @@
             font-weight: 300;
         }
 
+        .footer-location {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            color: #bbb;
+            font-size: 0.82rem;
+            cursor: pointer;
+            background: none;
+            border: none;
+            font-family: inherit;
+            font-weight: 300;
+            padding: 0;
+            transition: color 0.2s;
+        }
+
+        .footer-location:hover { color: #888; }
+
+        .footer-location-detail {
+            display: none;
+            color: #aaa;
+            font-size: 0.82rem;
+            margin-top: 2px;
+        }
+
+        .footer-location-detail.visible { display: block; }
+
         /* ─── RESPONSIVE ──────────────────────────── */
         @media (max-width: 768px) {
             .header-inner { height: 60px; }
@@ -469,7 +495,113 @@
 
             .services-grid { grid-template-columns: 1fr; }
 
+            .process-steps { grid-template-columns: 1fr; }
+            .process-step::after { display: none; }
+
+            .faq-grid { grid-template-columns: 1fr; }
+
             .hero h1 { font-size: 1.75rem; }
+        }
+
+        /* ── Werkwijze ── */
+        .process {
+            padding: 100px 24px;
+        }
+
+        .process-inner {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .process-steps {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 16px;
+            margin-top: 48px;
+            position: relative;
+        }
+
+        .process-step {
+            padding: 28px 24px;
+            border: 1px solid rgba(0,0,0,0.07);
+            border-radius: 16px;
+            background: #fafafa;
+            position: relative;
+        }
+
+        .process-step::after {
+            content: '→';
+            position: absolute;
+            right: -14px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #ccc;
+            font-size: 1rem;
+            z-index: 1;
+        }
+
+        .process-step:last-child::after { display: none; }
+
+        .process-num {
+            display: inline-block;
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            background: #111;
+            color: #fff;
+            font-size: 0.78rem;
+            font-weight: 700;
+            text-align: center;
+            line-height: 28px;
+            margin-bottom: 14px;
+        }
+
+        .process-step h3 {
+            font-size: 0.95rem;
+            margin-bottom: 8px;
+            color: #111;
+        }
+
+        .process-step p {
+            font-size: 0.82rem;
+            color: #777;
+            line-height: 1.6;
+            margin: 0;
+        }
+
+        /* ── FAQ ── */
+        .faq {
+            padding: 100px 24px;
+            max-width: 860px;
+            margin: 0 auto;
+        }
+
+        .faq-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 14px;
+            margin-top: 48px;
+        }
+
+        .faq-item {
+            padding: 24px;
+            border: 1px solid rgba(0,0,0,0.07);
+            border-radius: 14px;
+            background: #fafafa;
+        }
+
+        .faq-item h3 {
+            font-size: 0.9rem;
+            color: #111;
+            margin-bottom: 8px;
+            line-height: 1.4;
+        }
+
+        .faq-item p {
+            font-size: 0.82rem;
+            color: #777;
+            line-height: 1.6;
+            margin: 0;
         }
 
         /* ── Cookie banner ── */
@@ -581,7 +713,6 @@
         </div>
     </div>
 </section>
-
 <!-- ─── PROJECTEN ─────────────────────────────────── -->
 <section class="work" id="work">
     <div class="section-label">Voorbeelden</div>
@@ -620,7 +751,31 @@
         </div>
     </div>
 </section>
-
+<!-- ─── WERKWIJZE ────────────────────────────── -->
+<section class="process" id="process">
+<div class="process-inner">
+    <div class="section-label">Werkwijze</div>
+    <h2 class="section-title">Zo werkt het</h2>
+    <p class="section-sub">Van eerste bericht tot werkend product. Duidelijk, zonder gedoe.</p>
+    <div class="process-steps">
+        <div class="process-step">
+            <span class="process-num">1</span>
+            <h3>Vrijblijvend gesprek</h3>
+            <p>Vertel wat je nodig hebt. Via WhatsApp, telefoon of e-mail. Geen verplichtingen, geen verkooppraatje.</p>
+        </div>
+        <div class="process-step">
+            <span class="process-num">2</span>
+            <h3>Voorstel &amp; prijsopgave</h3>
+            <p>Helder overzicht van wat er gebouwd wordt, hoe lang het duurt en wat het kost. Pas daarna beslissen.</p>
+        </div>
+        <div class="process-step">
+            <span class="process-num">3</span>
+            <h3>Bouwen &amp; opleveren</h3>
+            <p>Regelmatige updates, directe communicatie en opgeleverd zoals afgesproken. Daarna beschikbaar voor vragen.</p>
+        </div>
+    </div>
+</div>
+</section>
 <!-- ─── DIENSTEN ──────────────────────────────────── -->
 <section class="services" id="services">
     <div class="section-label">Diensten</div>
@@ -674,7 +829,37 @@
         </p>
     </div>
 </section>
-
+<!-- ─── FAQ ──────────────────────────────────── -->
+<section class="faq">
+    <div class="section-label">Veelgesteld</div>
+    <h2 class="section-title">Veelgestelde vragen</h2>
+    <div class="faq-grid">
+        <div class="faq-item">
+            <h3>Wat kost een website of webapp?</h3>
+            <p>Dat verschilt per project. Na een eerste gesprek over de wensen volgt een concreet voorstel met vaste prijs. Zo weet je precies waar je aan toe bent, nog voor er iets gebouwd wordt.</p>
+        </div>
+        <div class="faq-item">
+            <h3>Hoe lang duurt een project?</h3>
+            <p>Een website is vaak binnen twee tot vier weken klaar. Grotere projecten duren langer, maar de planning wordt altijd vooraf besproken en vastgelegd.</p>
+        </div>
+        <div class="faq-item">
+            <h3>Kan ik na oplevering nog wijzigingen doorvoeren?</h3>
+            <p>Ja. Na oplevering is ondersteuning en onderhoud mogelijk. Kleine aanpassingen worden snel opgepakt, grotere wijzigingen worden apart begroot.</p>
+        </div>
+        <div class="faq-item">
+            <h3>Werk je met een vast tarief of uurtarief?</h3>
+            <p>Beide is mogelijk. Voor de meeste projecten wordt een vaste prijs afgesproken, zodat je vooraf weet waar je aan toe bent.</p>
+        </div>
+        <div class="faq-item">
+            <h3>Heb ik technische kennis nodig?</h3>
+            <p>Nee. Uitleg in gewone taal, zonder jargon. Het enige dat nodig is, is een goed idee van wat je wilt bereiken.</p>
+        </div>
+        <div class="faq-item">
+            <h3>Wat als ik nog geen duidelijk idee heb?</h3>
+            <p>Geen probleem. Een eerste gesprek is altijd vrijblijvend. Samen wordt gekeken wat technisch haalbaar is en wat het beste aansluit bij jouw doel.</p>
+        </div>
+    </div>
+</section>
 <!-- ─── CONTACT ────────────────────────────────────── -->
 <footer id="contact">
     <div class="footer-inner">
@@ -695,9 +880,12 @@
             </a>
         </div>
         <div class="footer-meta">
-            <span>+31 6 43 12 73 91</span>
-            <span>Grote Kerkstraat 14, 2865 XM Ammerstol</span>
-            <span style="margin-top:16px;">© 2026 Verwaal Software</span>
+            <button class="footer-location" onclick="var d=document.getElementById('addr');d.classList.toggle('visible');">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 13-8 13s-8-7-8-13a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                Ammerstol
+            </button>
+            <span class="footer-location-detail" id="addr">Grote Kerkstraat 14, 2865 XM Ammerstol</span>
+            <span style="margin-top:16px;">&copy; 2026 Verwaal Software</span>
         </div>
     </div>
 </footer>
