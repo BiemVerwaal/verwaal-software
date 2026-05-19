@@ -471,9 +471,68 @@
 
             .hero h1 { font-size: 1.75rem; }
         }
+
+        /* ── Cookie banner ── */
+        .cookie-bar {
+            position: fixed;
+            bottom: 24px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 999;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            padding: 16px 22px;
+            background: rgba(255,255,255,0.97);
+            border: 1px solid rgba(0,0,0,0.08);
+            border-radius: 16px;
+            box-shadow: 0 8px 40px rgba(0,0,0,0.10);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            font-size: 0.84rem;
+            max-width: calc(100vw - 48px);
+            animation: slideUp 0.4s cubic-bezier(0.22,1,0.36,1);
+        }
+
+        @keyframes slideUp {
+            from { opacity: 0; transform: translateX(-50%) translateY(16px); }
+            to   { opacity: 1; transform: translateX(-50%) translateY(0); }
+        }
+
+        .cookie-bar p {
+            color: #444;
+            line-height: 1.5;
+            white-space: normal;
+            margin: 0;
+        }
+
+        .cookie-bar p strong { color: #111; }
+
+        .cookie-close {
+            flex-shrink: 0;
+            background: #111;
+            border: none;
+            color: #fff;
+            border-radius: 50px;
+            padding: 8px 18px;
+            font-size: 0.82rem;
+            font-family: inherit;
+            font-weight: 500;
+            cursor: pointer;
+            transition: background 0.2s;
+            white-space: nowrap;
+        }
+
+        .cookie-close:hover { background: #333; }
     </style>
 </head>
 <body>
+
+<!-- ─── COOKIE BANNER ────────────────────────────── -->
+<div class="cookie-bar" id="cookie-bar">
+    <p>Deze website gebruikt <strong>geen cookies</strong> en verzamelt geen persoonsgegevens.</p>
+    <button class="cookie-close" onclick="document.getElementById('cookie-bar').style.display='none'">Begrepen</button>
+</div>
 
 <!-- ─── HEADER ──────────────────────────────────── -->
 <header>
