@@ -664,13 +664,18 @@
             .section-sub { margin-bottom: 40px; font-size: 0.95rem; }
 
             .cookie-bar {
+                left: 0;
+                right: 0;
+                bottom: 0;
+                transform: none;
+                max-width: 100%;
+                border-radius: 16px 16px 0 0;
                 flex-direction: column;
-                align-items: flex-start;
-                gap: 12px;
-                bottom: 12px;
-                padding: 16px 18px;
+                align-items: stretch;
+                gap: 10px;
+                padding: 20px 20px 28px;
             }
-            .cookie-close { align-self: stretch; text-align: center; }
+            .cookie-close { text-align: center; }
         }
 
         @media (max-width: 480px) {
